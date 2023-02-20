@@ -24,8 +24,8 @@ public class UserResource {
     @GetMapping("/users/{id}")
     public User retrieveUser(@PathVariable Integer id) {
         User user = this.service.findOne(id);
-        if(user ==null) {
-            throw new UserNotFoundException("id:"+id);
+        if (user == null) {
+            throw new UserNotFoundException("id:" + id);
         }
         return user;
     }
@@ -34,10 +34,10 @@ public class UserResource {
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User savedUser = this.service.save(user);
         URI location = ServletUriComponentsBuilder
-                        .fromCurrentRequest()
-                        .path("/{id}")
-                        .buildAndExpand(savedUser.getId())
-                        .toUri();
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(savedUser.getId())
+                .toUri();
         return ResponseEntity.created(location).build();
     }
 
