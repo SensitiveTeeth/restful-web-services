@@ -1,9 +1,12 @@
 package com.learningJavaMicroservice.rest.webservices.restfulwebservices.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 
 public class User {
     private Integer id;
+    @JsonProperty("user_name")
     private String name;
     private LocalDate birthDate;
 
