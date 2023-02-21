@@ -15,20 +15,20 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RestController
 public class UserResource {
 
-    private UserDaoService service;
+    private UserRepository userRepository;
 
-    public UserResource(UserDaoService service) {
-        this.service = service;
+    public UserResource(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @GetMapping("/users")
     public List<User> retrieveAllUsers() {
-        return this.service.findAll();
+        return this.userRepository.findAll();
     }
 
     @GetMapping("/users/{id}")
     public EntityModel<User> retrieveUser(@PathVariable Integer id) {
-        User user = this.service.findOne(id);
+        User user = this.userRepository.findOne(id);
         if (user == null) {
             throw new UserNotFoundException("id:" + id);
         }
@@ -41,7 +41,7 @@ public class UserResource {
 
     @PostMapping("/users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
-        User savedUser = this.service.save(user);
+        User savedUser = this.userRepository.save(user);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")

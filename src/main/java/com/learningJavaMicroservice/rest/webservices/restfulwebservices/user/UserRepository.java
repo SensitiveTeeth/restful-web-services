@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 @Component
-public class UserDaoService {
+public class UserRepository {
 
     private static List<User> users = new ArrayList<>();
 
