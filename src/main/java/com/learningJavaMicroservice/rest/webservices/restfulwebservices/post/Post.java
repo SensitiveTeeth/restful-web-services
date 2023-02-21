@@ -1,4 +1,4 @@
-package com.learningJavaMicroservice.rest.webservices.restfulwebservices.Post;
+package com.learningJavaMicroservice.rest.webservices.restfulwebservices.post;
 
 import com.learningJavaMicroservice.rest.webservices.restfulwebservices.user.User;
 import jakarta.persistence.*;

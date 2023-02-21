@@ -1,8 +1,7 @@
 package com.learningJavaMicroservice.rest.webservices.restfulwebservices.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.learningJavaMicroservice.rest.webservices.restfulwebservices.Post.Post;
+import com.learningJavaMicroservice.rest.webservices.restfulwebservices.post.Post;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

@@ -1,7 +1,7 @@
 package com.learningJavaMicroservice.rest.webservices.restfulwebservices.user;
 
-import com.learningJavaMicroservice.rest.webservices.restfulwebservices.Post.Post;
-import com.learningJavaMicroservice.rest.webservices.restfulwebservices.Post.PostJpaRepository;
+import com.learningJavaMicroservice.rest.webservices.restfulwebservices.post.Post;
+import com.learningJavaMicroservice.rest.webservices.restfulwebservices.post.PostJpaRepository;
 import com.learningJavaMicroservice.rest.webservices.restfulwebservices.jpa.UserJpaRepository;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
@@ -52,7 +52,6 @@ public class UserJpaResource {
 
     @PostMapping("/jpa/users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
-        System.out.println(user);
         User savedUser = this.userJpaRepository.save(user);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
